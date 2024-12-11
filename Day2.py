@@ -1,3 +1,6 @@
+#Day 2, Part 1
+##SOLVED
+
 import pandas as pd
 
 #Testing file
@@ -5,12 +8,13 @@ input_file = (r"C:\Users\amcguire\Desktop\test.xlsx")
 
 #Day2 file
 #input_file = (r"C:\Users\amcguire\Desktop\day2.xlsx")
-df = pd.read_excel(input_file, header = None, na_filter=False)
+df = pd.read_excel(input_file, header = None)
 
 safe_count = 0
 unsafe_count = 0
 
 for index,row in df.iterrows():
+    row.dropna(inplace = True)
     safe = False
     inc = row.is_monotonic_increasing
     dec = row.is_monotonic_decreasing
