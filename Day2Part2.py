@@ -70,17 +70,12 @@ for i in bad_rows:
                     if diff3 == 0 or diff3 > 3:
                         fail = True
                     elif i3 == len(row3)-1 and not fail:
-                        safe3 = True
                         results3.append(True)
-    r = set(results3)
     if True in results3:
         print(i,"passes retest")
         retest_true = retest_true + 1
     else:
         print(i,"FAIL")
-
-
-
 
 print("Safe Round 1: ",safe_count)
 print("Safe Round 2: ",retest_true)
